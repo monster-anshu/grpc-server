@@ -1,0 +1,15 @@
+version: v2
+
+clean: true
+
+inputs:
+  - directory: ./grpc-proto
+
+plugins:
+  - out: ./src/proto
+    strategy: all
+    local: protoc-gen-ts_proto
+    opt:
+      - outputServices=grpc-js
+      - esModuleInterop=true
+      - env=node
