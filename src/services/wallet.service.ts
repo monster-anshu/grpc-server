@@ -24,4 +24,10 @@ export const walletServiceServer: WalletServiceServer = {
       transactions: [],
     });
   },
+  transfer: (call, callback) => {
+    callback(null, {
+      success: true,
+      transactionId: crypto.randomUUID(),
+    });
+  },
 };
